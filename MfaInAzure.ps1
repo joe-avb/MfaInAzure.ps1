@@ -42,7 +42,8 @@ $ADList = Get-MsolUser -all |
         }
     } |
     Where-Object {$_.IsLicensed -ne $False -and `
-                  $_.UserPrincipalName -notlike "*#EXT#*"} |
+                  $_.UserPrincipalName -notlike "*#EXT#*" -and `
+                  $_."MFA Status" -ne "Enforced"} |
     Sort-Object -Property UserPrincipalName 
 
 # Run the function to create the attachment and use .NET commands to send the email out using the Mail variables above
