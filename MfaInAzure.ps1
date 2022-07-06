@@ -1,11 +1,11 @@
 # Get secure Automate Credentials and assign to variable
-$credObject = Get-AutomationPSCredential -Name "<<CredentialName>>"
+$credObject = Get-AutomationPSCredential -Name "Autobot"
 
 # Set variables for mail delivery
 $SMTPserver = "smtp.office365.com"
 $SMTPport = "587"
-$from = "<<from Email>>"
-$to = "<<to Email>>"
+$from = "autobot@avb.net"
+$to = "it_reporting@avb.net"
 $subject = "MFA Status Report"
 $emailbody = "MFA Status Report"
 $Username = $credObject.UserName 
